@@ -13,7 +13,7 @@ Feature: List comments on landing page
     When I am on the landing page
     Then I should be able to see "A breaking news item"
     And I should be able to see "Learn Rails 5"
-    When I click on "show article"
+    When I click on "Show Article"
     Then I should visit the "Learn Rails 5" article page
     And I should see "Build awesome rails applications" as the content of the article
     And I should see a "comment" form
