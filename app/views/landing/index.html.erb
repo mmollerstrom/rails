@@ -2,11 +2,7 @@
   <% @articles.each do |article| %>
     <li>
       <%= article.title %><br />
-      <%= article.content %>
+      <%= link_to 'Show Article', article_path(article) %>
     </li>
   <% end %>
 </ul>
-
-<%= form_tag do %>
-Add form contents here
-<% end %>
