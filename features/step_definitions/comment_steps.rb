@@ -16,22 +16,22 @@ Then(/^I should see "([^"]*)" as the content of the article$/) do |content|
   expect(page).to have_content content
 end
 
-Then(/^I should see a "([^"]*)" form$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I should see a "([^"]*)" form$/) do |content|
+  expect(page).to have_content content
 end
 
 When(/^I fill the "([^"]*)" field with "([^"]*)"$/) do |arg1, arg2|
-  pending # Write code here that turns the phrase above into concrete actions
+  fill_in arg1, with: arg2
 end
 
-When(/^I will fill the email field with "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+When(/^I will fill the email field with "([^"]*)"$/) do |content|
+  fill_in email field, with: content
 end
 
 When(/^I click the "([^"]*)" button$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+  click_button arg1
 end
 
-Then(/^I should see "([^"]*)" on the article page$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I should see "([^"]*)" on the article page$/) do |content|
+  expect(page).to have_content content
 end

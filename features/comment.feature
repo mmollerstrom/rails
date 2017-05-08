@@ -16,10 +16,9 @@ Feature: List comments on landing page
     When I click on "Show Article"
     Then I should visit the "Learn Rails 5" article page
     And I should see "Build awesome rails applications" as the content of the article
-    And I should see a "comment" form
-    When I fill the "comment" field with "Learning rails 5 has been awesome"
-    And I will fill the email field with "max@max.com"
-    And I click the "submit comment" button
-    Then I should see "Comments added" on the article page
-    And I should see "Learning rails 5 has been awesome"
+    And I should see "Message"
+    When I fill the "comment[message]" field with "Learning rails 5 has been awesome"
+    And I fill the "comment_email" field with "max@max.com"
+    And I click the "Submit Comment" button
+    Then I should see "Learning rails 5 has been awesome"
     And I should see "Posted by: max@max.com"
