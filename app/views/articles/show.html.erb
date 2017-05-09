@@ -5,7 +5,9 @@
 <div>
 <%= @article.content %>
 </div>
-
+<div>
+by <%= @article.author %>
+</div>
 
 <% @article.comments.each do |comment| %>
       <%= comment.message %>

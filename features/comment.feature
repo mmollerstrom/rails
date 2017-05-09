@@ -5,9 +5,9 @@ Feature: List comments on landing page
 
   Background:
     Given the following articles exists
-    | title                | content                            |
-    | A breaking news item | Some really breaking action        |
-    | Learn Rails 5        | Build awesome rails applications   |
+    | title                | content                            | author |
+    | A breaking news item | Some really breaking action        | max    |
+    | Learn Rails 5        | Build awesome rails applications   | philip |
 
   Scenario: Adding comments to articles
     When I am on the landing page
@@ -17,8 +17,9 @@ Feature: List comments on landing page
     Then I should visit the "Learn Rails 5" article page
     And I should see "Build awesome rails applications" as the content of the article
     And I should see "Message"
-    When I fill the "comment[message]" field with "Learning rails 5 has been awesome"
-    And I fill the "comment_email" field with "max@max.com"
+    And I should see "by philip"
+    When I fill the "message" field with "Learning rails 5 has been awesome"
+    And I fill the "email" field with "max@max.com"
     And I click the "Submit Comment" button
     Then I should see "Learning rails 5 has been awesome"
     And I should see "Posted by: max@max.com"
