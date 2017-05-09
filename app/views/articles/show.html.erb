@@ -7,23 +7,23 @@
 </div>
 
 
-<%= @article.comments.each do |comment| %>
+<% @article.comments.each do |comment| %>
       <%= comment.message %>
       Posted by: <%= comment.email %>
 <% end %>
 
-<%= form_for([@article, @article.comments.new]) do |f| %>
+<%= form_tag article_comments_path(@article.id) do %>
    <div>
-     <%= f.label :message %><br>
-     <%= f.text_area :message %>
+     <%= label_tag :message %><br>
+     <%= text_area_tag :message %>
    </div>
 
    <div>
-     <%= f.label :email %><br>
-     <%= f.email_field :email  %>
+     <%= label_tag :email %><br>
+     <%= email_field_tag :email  %>
    </div>
 
    <div>
-       <%= f.submit "Submit Comment" %>
+       <%= submit_tag "Submit Comment" %>
    </div>
 <% end %>

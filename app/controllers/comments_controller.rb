@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
 
 
   def safe_param
-    params.require(:comment).permit(:message, :email)
+    params.permit(:message, :email)
   end
 
 end
